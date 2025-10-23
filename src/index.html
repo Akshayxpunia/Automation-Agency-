@@ -57,6 +57,61 @@
         Cal.ns["growth-mapping-call"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
     
+    <!-- Text Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const texts = ["Drives ROI", "Runs 24/7", "Scales Faster", "Reduces Costs", "Boosts Throughput"];
+            let currentIndex = 0;
+            let currentText = "";
+            let isDeleting = false;
+            let isPaused = false;
+            const typingSpeed = 100;
+            const deletingSpeed = 50;
+            const pauseDuration = 2000;
+            
+            const animatedTextElement = document.getElementById('animated-text');
+            const cursorElement = document.getElementById('text-cursor');
+            
+            function typeText() {
+                const fullText = texts[currentIndex];
+                
+                if (isPaused) {
+                    return;
+                }
+                
+                if (!isDeleting) {
+                    currentText = fullText.substring(0, currentText.length + 1);
+                    animatedTextElement.textContent = currentText;
+                    
+                    if (currentText === fullText) {
+                        isPaused = true;
+                        setTimeout(() => {
+                            isPaused = false;
+                            isDeleting = true;
+                            typeText();
+                        }, pauseDuration);
+                        return;
+                    }
+                } else {
+                    currentText = fullText.substring(0, currentText.length - 1);
+                    animatedTextElement.textContent = currentText;
+                    
+                    if (currentText === "") {
+                        isDeleting = false;
+                        currentIndex = (currentIndex + 1) % texts.length;
+                    }
+                }
+                
+                const speed = isDeleting ? deletingSpeed : typingSpeed;
+                setTimeout(typeText, speed);
+            }
+            
+            if (animatedTextElement) {
+                typeText();
+            }
+        });
+    </script>
+    
     <style>
         @keyframes scroll {
             0% { transform: translateX(0); }
