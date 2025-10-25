@@ -80,7 +80,7 @@
         }
 
         .section {
-            height: 100vh;
+            min-height: 100vh;
             scroll-snap-align: start;
             display: flex;
             flex-direction: column;
@@ -256,6 +256,19 @@
             color: #fff;
         }
 
+        .btn-outline {
+            background-color: transparent;
+            color: #000;
+            border: 1px solid #000;
+            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
         /* Companies Section */
         .companies-section {
             padding: 1rem 1.5rem 2rem;
@@ -330,6 +343,224 @@
             margin: 0 auto 3rem;
         }
 
+        /* Three Column Grid */
+        .grid-three {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .grid-card {
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            background-color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover .icon-circle {
+            transform: scale(1.1);
+        }
+
+        .icon-circle svg {
+            width: 24px;
+            height: 24px;
+            color: #fff;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #6b7280;
+        }
+
+        /* Four Column Grid */
+        .grid-four {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .service-card {
+            text-align: center;
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-icon svg {
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .service-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-description {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        /* Phase Grid */
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .phase-card {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phase-card:hover {
+            background: linear-gradient(135deg, #14b8a6, #3b82f6, #9333ea);
+        }
+
+        .phase-card:hover .phase-title,
+        .phase-card:hover .phase-subtitle,
+        .phase-card:hover .phase-description {
+            color: #fff;
+        }
+
+        .phase-card:hover .btn-outline {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        .phase-card:hover .btn-outline:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .phase-title {
+            font-size: 0.875rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            transition: color 0.5s ease;
+        }
+
+        .phase-subtitle {
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            transition: color 0.5s ease;
+        }
+
+        .phase-description {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+            transition: color 0.5s ease;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 2rem 1.5rem;
+        }
+
+        .testimonials-scroll {
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 1rem;
+            animation: scroll 40s linear infinite;
+        }
+
+        .testimonials-track-reverse {
+            animation: scroll-reverse 40s linear infinite;
+        }
+
+        @keyframes scroll-reverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        .testimonial-card {
+            flex-shrink: 0;
+            width: 280px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .testimonial-text {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .testimonial-role {
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+
         /* Responsive Design */
         @media (min-width: 640px) {
             .button-group {
@@ -370,6 +601,74 @@
             .companies-track {
                 gap: 4rem;
             }
+
+            .icon-circle {
+                width: 96px;
+                height: 96px;
+            }
+
+            .icon-circle svg {
+                width: 48px;
+                height: 48px;
+            }
+
+            .card-title {
+                font-size: 2.25rem;
+            }
+
+            .card-description {
+                font-size: 1.25rem;
+            }
+
+            .service-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .service-icon svg {
+                width: 40px;
+                height: 40px;
+            }
+
+            .service-title {
+                font-size: 1.25rem;
+            }
+
+            .service-description {
+                font-size: 1rem;
+            }
+
+            .phase-card {
+                padding: 1.5rem;
+            }
+
+            .phase-title {
+                font-size: 1.5rem;
+            }
+
+            .phase-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .phase-description {
+                font-size: 1rem;
+            }
+
+            .testimonial-card {
+                width: 320px;
+                padding: 1.5rem;
+            }
+
+            .testimonial-text {
+                font-size: 0.875rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .grid-three {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 4rem;
+            }
         }
 
         @media (min-width: 1024px) {
@@ -379,6 +678,20 @@
 
             .hero-content {
                 padding-left: 8vw;
+            }
+
+            .grid-four {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+
+            .phase-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0;
+            }
+
+            .phase-card {
+                border-radius: 0;
             }
         }
     </style>
@@ -492,6 +805,241 @@
                     <p class="section-description">
                         Our framework helps you cut through the noise and focus on what matters most.
                     </p>
+                </div>
+            </section>
+
+            <!-- Section 4: Three Pillars - Identify, Educate, Develop -->
+            <section class="section content-section" style="background-color: #fff;">
+                <div class="grid-three">
+                    <div class="grid-card">
+                        <div class="icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Identify</h3>
+                        <p class="card-description">
+                            We uncover the highest-impact AI opportunities inside your business.
+                        </p>
+                    </div>
+
+                    <div class="grid-card">
+                        <div class="icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path>
+                                <path d="M22 10v6"></path>
+                                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Educate</h3>
+                        <p class="card-description">
+                            We empower your team with the right knowledge, tools, and confidence to embed AI across workflows.
+                        </p>
+                    </div>
+
+                    <div class="grid-card">
+                        <div class="icon-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Develop</h3>
+                        <p class="card-description">
+                            We design and build custom AI systems that deliver measurable ROI.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Solutions We Build -->
+            <section class="section content-section" style="background-color: #f8f8f8;">
+                <div style="max-width: 72rem; width: 100%;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h2 class="section-title">Solutions We Build</h2>
+                        <p class="section-description">Core Services</p>
+                    </div>
+                    
+                    <div class="grid-four">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="service-title">Voice Agents</h3>
+                            <p class="service-description">Handle inbound & outbound calls 24/7.</p>
+                            <button class="btn btn-outline">See Example</button>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="service-title">Chat Agents</h3>
+                            <p class="service-description">Intelligent web & WhatsApp bots that qualify and book.</p>
+                            <button class="btn btn-outline">Case Study</button>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </div>
+                            <h3 class="service-title">Custom Automations</h3>
+                            <p class="service-description">Tailored backend workflows that save hours.</p>
+                            <button class="btn btn-outline">See Example</button>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect>
+                                    <path d="M9 22v-4h6v4"></path>
+                                    <path d="M8 6h.01"></path>
+                                    <path d="M16 6h.01"></path>
+                                    <path d="M12 6h.01"></path>
+                                    <path d="M12 10h.01"></path>
+                                    <path d="M12 14h.01"></path>
+                                    <path d="M16 10h.01"></path>
+                                    <path d="M16 14h.01"></path>
+                                    <path d="M8 10h.01"></path>
+                                    <path d="M8 14h.01"></path>
+                                </svg>
+                            </div>
+                            <h3 class="service-title">Enterprise Consulting</h3>
+                            <p class="service-description">Strategy + integration to scale AI across the org.</p>
+                            <button class="btn btn-outline">Case Study</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Our Proven Process -->
+            <section class="section content-section" style="background-color: #fff;">
+                <div style="max-width: 72rem; width: 100%;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h2 class="section-title">Our Proven Process</h2>
+                        <p class="section-description">A systematic approach to transforming your business operations with AI</p>
+                    </div>
+                    
+                    <div class="phase-grid">
+                        <div class="phase-card">
+                            <h3 class="phase-title">Phase 1</h3>
+                            <h4 class="phase-subtitle">Discovery & Alignment</h4>
+                            <p class="phase-description">We uncover opportunities and align goals to build the right AI roadmap.</p>
+                            <button class="btn btn-outline">View More →</button>
+                        </div>
+
+                        <div class="phase-card">
+                            <h3 class="phase-title">Phase 2</h3>
+                            <h4 class="phase-subtitle">System Design & Validation</h4>
+                            <p class="phase-description">We map workflows and design the blueprint that powers your success.</p>
+                            <button class="btn btn-outline">View More →</button>
+                        </div>
+
+                        <div class="phase-card">
+                            <h3 class="phase-title">Phase 3</h3>
+                            <h4 class="phase-subtitle">Implementation & Integration</h4>
+                            <p class="phase-description">We execute the build and integrate AI seamlessly into operations.</p>
+                            <button class="btn btn-outline">View More →</button>
+                        </div>
+
+                        <div class="phase-card">
+                            <h3 class="phase-title">Phase 4</h3>
+                            <h4 class="phase-subtitle">Continued Partnership</h4>
+                            <p class="phase-description">We monitor, optimize, and evolve your AI as your business grows.</p>
+                            <button class="btn btn-outline">View More →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7: Testimonials -->
+            <section class="section content-section" style="background-color: #f8f8f8;">
+                <div style="max-width: 72rem; width: 100%;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h2 class="section-title">Trusted by Forward-Thinking Teams</h2>
+                        <p class="section-description">Reprise AI helps businesses scale faster, increase efficiency, and unlock new growth through intelligent automation.</p>
+                    </div>
+                    
+                    <div class="testimonials-section">
+                        <div class="testimonials-scroll">
+                            <div class="testimonials-track">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Reprise AI automated 60% of our sales operations. Our reps now spend time closing deals instead of chasing leads."</p>
+                                    <p class="testimonial-author">Jordan Matthews</p>
+                                    <p class="testimonial-role">VP of Sales, GrowthTech</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"The onboarding automation reduced churn in the first 30 days by 25%. Customers get value instantly."</p>
+                                    <p class="testimonial-author">Alicia Romero</p>
+                                    <p class="testimonial-role">Head of Customer Success, FinEdge</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Our HR team saves hours each week on screening. The efficiency boost is unreal."</p>
+                                    <p class="testimonial-author">Daniel Chen</p>
+                                    <p class="testimonial-role">Director of People Ops, WorkHub</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Reprise AI became like a silent partner. Scaling costs dropped 40% while revenue doubled."</p>
+                                    <p class="testimonial-author">David Chen</p>
+                                    <p class="testimonial-role">Operations Director, ScaleUp</p>
+                                </div>
+                                <!-- Duplicate for loop -->
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Reprise AI automated 60% of our sales operations. Our reps now spend time closing deals instead of chasing leads."</p>
+                                    <p class="testimonial-author">Jordan Matthews</p>
+                                    <p class="testimonial-role">VP of Sales, GrowthTech</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"The onboarding automation reduced churn in the first 30 days by 25%. Customers get value instantly."</p>
+                                    <p class="testimonial-author">Alicia Romero</p>
+                                    <p class="testimonial-role">Head of Customer Success, FinEdge</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonials-scroll">
+                            <div class="testimonials-track testimonials-track-reverse">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Financial reporting is now on autopilot. I have real-time visibility into cash flow and forecasts."</p>
+                                    <p class="testimonial-author">Priya Patel</p>
+                                    <p class="testimonial-role">CFO, NovaRetail</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"The AI-driven analytics give us clarity across operations. We make faster, smarter decisions."</p>
+                                    <p class="testimonial-author">Miguel Alvarez</p>
+                                    <p class="testimonial-role">COO, BrightPath</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Our customer support is now 24/7 without hiring anyone. Response times dropped to under 2 minutes."</p>
+                                    <p class="testimonial-author">Rachel Kim</p>
+                                    <p class="testimonial-role">Head of Support, TechFlow</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Our finance is now on autopilot. I have real-time cash flow and forecasts."</p>
+                                    <p class="testimonial-author">Miguel Alvarez</p>
+                                    <p class="testimonial-role">COO, BrightPath</p>
+                                </div>
+                                <!-- Duplicate for loop -->
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Financial reporting is now on autopilot. I have real-time visibility into cash flow and forecasts."</p>
+                                    <p class="testimonial-author">Priya Patel</p>
+                                    <p class="testimonial-role">CFO, NovaRetail</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"The AI-driven analytics give us clarity across operations. We make faster, smarter decisions."</p>
+                                    <p class="testimonial-author">Miguel Alvarez</p>
+                                    <p class="testimonial-role">COO, BrightPath</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
