@@ -96,6 +96,33 @@
         .animate-scroll-reverse {
             animation: scroll-reverse 40s linear infinite;
         }
+        
+        /* Ensure text doesn't overflow on large screens */
+        @media (min-width: 1024px) {
+            h1 {
+                max-width: 100%;
+                overflow: visible;
+            }
+        }
+        
+        /* Enhanced visibility for rotating text */
+        #rotatingText {
+            display: inline-block;
+            min-width: 180px;
+            text-align: left;
+        }
+        
+        @media (min-width: 768px) {
+            #rotatingText {
+                min-width: 280px;
+            }
+        }
+        
+        @media (min-width: 1440px) {
+            #rotatingText {
+                min-width: 350px;
+            }
+        }
     </style>
 </head>
 <body class="__className_f367f3">
