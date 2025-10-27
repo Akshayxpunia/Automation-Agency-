@@ -567,13 +567,13 @@
             }
 
             if (!isDeleting) {
-                element.textContent = currentText.substring(0, charIndex + 1);
+                element.innerHTML = currentText.substring(0, charIndex + 1) + '<span class="animate-pulse">|</span>';
                 charIndex++;
                 if (charIndex === currentText.length) {
                     isPaused = true;
                 }
             } else {
-                element.textContent = currentText.substring(0, charIndex - 1);
+                element.innerHTML = currentText.substring(0, charIndex - 1) + '<span class="animate-pulse">|</span>';
                 charIndex--;
                 if (charIndex === 0) {
                     isDeleting = false;
